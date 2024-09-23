@@ -1,0 +1,27 @@
+/* Write your code here: */
+
+/* Grouping rule */
+h1,h2{
+    color: blueviolet
+}
+
+/* Child rule*/
+.box > p{
+    color: firebrick
+}
+
+/* Decendant rule*/
+.box li{
+    color: blue
+} 
+
+/* Chaining Rule*/
+li.done{
+    color: seagreen;
+}
+
+/* Trying to combine different rules*/
+ul > p.done{
+    font-size: 0.5rem;
+}
+/* Here we combine the child and chain rules*/

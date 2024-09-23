@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flag{
+            height: 600px;
+            width: 900px;
+            background-color: transparent;
+            position: relative;
+            border: 10px solid black;
+            overflow: hidden;
+            
+        }
+        #black-traingle{
+            width: 0px;
+            height: 0px;
+            border-top: 175px solid;
+            border-bottom: 175px solid;
+            border-left: 262.5px solid;
+            border-color: transparent transparent transparent black;
+            position: absolute;
+            top: 112.5px;
+            z-index: 0;  
+        }
+
+        #yellow-trianlge{
+            width: 0px;
+            height: 0px;
+            border-top: 218px solid;
+            border-bottom: 218px solid;
+            border-left: 328.125px solid;
+            border-color: transparent transparent transparent #f4b400;
+            position: absolute;
+            top: 70px;
+            z-index: -1;  
+        }
+
+        #green-traingle{
+            width: 0px;
+            height: 0px;
+            border-top: 350px solid;
+            border-bottom: 350px solid;
+            border-left: 525px solid;
+            border-color: transparent transparent transparent #0f9d58;
+            position: absolute;
+            top: -65px;
+            z-index: -2;       
+        }
+
+        #green-rectangle{
+            width: 920px;
+            height: 150px;
+            background-color: #0f9d58;
+            position: absolute;
+            z-index: -2;
+            top:215px
+        }
+        #red-rectangle{
+            width: 920px;
+            height: 200px;
+            background-color: #ea4335;
+            position: absolute;
+            z-index: -3;
+            top: -18px;
+            margin-left: px; 
+            
+        }
+        #blue-rectangle{
+            width: 920px;
+            height: 250px;
+            background-color: #1d3390 ;
+            position: absolute;
+            z-index: -3;
+            top:400px
+        }
+
+        #white-triangle{
+            width: 0px;
+            height: 0px;
+            border-top: 400px solid;
+            border-bottom: 400px solid;
+            border-left: 600px solid;
+            border-color: transparent transparent transparent white;
+            position: absolute;
+            top: -112.5px;
+            z-index: -3; 
+
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="flag">
+        <p id="base"></p>
+        <div class="inner">
+            <p id="black-traingle"></p>
+            <p id="yellow-trianlge"></p>
+            <p id="green-traingle"></p>
+            <p id="green-rectangle"></p>
+            <p id="red-rectangle"></p>
+            <p id="blue-rectangle"></p>
+            <p id="white-triangle"></p>
+        </div>
+        
+
+
+
+    </div>
+    
+</body>
+</html>

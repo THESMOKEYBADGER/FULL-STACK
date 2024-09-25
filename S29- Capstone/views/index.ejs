@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1.2rem;
+            margin-right: 10px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+            margin-bottom: 10px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #4facfe;
+        }
+
+        button {
+            background-color: #4facfe;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #00f2fe;
+            transform: translateY(-2px);
+        }
+
+        h2 {
+            margin: 20px 0 10px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 5px 0;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Check the Weather by City Name</h1>
+    <form action="/weather" method="POST">
+        <label for="city">City Name:</label>
+        <input type="text" id="city" name="city" required>
+        <br>
+        <button type="submit">Check Weather</button>
+    </form>
+
+    <% if (weather) { %>
+        <h2>Weather for <%= weather.name %>:</h2>
+        <p>Weather: <%= weather.weather.length > 0 ? weather.weather[0].description : 'No description available' %></p>
+        <p>Temperature: <%= weather.main.temp %> °C</p>
+        <p>Will it rain tomorrow? <%= weather.rain ? 'Yes' : 'No' %></p>
+    <% } %>
+
+    <% if (error) { %>
+        <p class="error"><%= error %></p>
+    <% } %>
+</body>
+</html>
